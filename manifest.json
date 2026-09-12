@@ -1,0 +1,9 @@
+{
+  "name": "SharedMapEditor",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/the-grizzly-bear/valheim-shared-map-editor",
+  "description": "Server-side tool: removes one specific player's pins from the shared map (cartography table) without wiping anyone else's.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2333"
+  ]
+}
