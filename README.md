@@ -1,4 +1,4 @@
-# Pin Purge
+# Shared Map Editor
 
 Server-side BepInEx mod that removes one specific player's pins from every
 cartography table's shared map data — without wiping the exploration
@@ -17,7 +17,7 @@ that stored blob directly and permanently.
 
 ## Install
 
-Drop `PinPurge.dll` into the server's `BepInEx/plugins/PinPurge/`. No client
+Drop `SharedMapEditor.dll` into the server's `BepInEx/plugins/SharedMapEditor/`. No client
 install needed — this only touches world data, run from the server console.
 
 ## Use

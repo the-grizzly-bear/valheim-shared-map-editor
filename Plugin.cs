@@ -8,13 +8,13 @@ using BepInEx;
 using HarmonyLib;
 using UnityEngine;
 
-namespace PinPurge
+namespace SharedMapEditor
 {
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
-    public class PinPurgePlugin : BaseUnityPlugin
+    public class SharedMapEditorPlugin : BaseUnityPlugin
     {
-        public const string PluginGUID = "mishka.valheim.pinpurge";
-        public const string PluginName = "PinPurge";
+        public const string PluginGUID = "mishka.valheim.sharedmapeditor";
+        public const string PluginName = "SharedMapEditor";
         public const string PluginVersion = "1.0.0";
 
         private void Awake()
@@ -181,7 +181,7 @@ namespace PinPurge
             string path = Path.Combine(DumpDirectory(), "maptable-dump.txt");
             File.WriteAllText(path, sb.ToString());
             Console.instance?.Print($"wrote {path}");
-            ZLog.Log("[PinPurge] wrote " + path);
+            ZLog.Log("[SharedMapEditor] wrote " + path);
         }
 
         private static void PurgeOwnerPins(long ownerID)
@@ -205,7 +205,7 @@ namespace PinPurge
                 }
                 catch (Exception e)
                 {
-                    ZLog.LogWarning("[PinPurge] failed to parse table at " + zdo.GetPosition() + ": " + e.Message);
+                    ZLog.LogWarning("[SharedMapEditor] failed to parse table at " + zdo.GetPosition() + ": " + e.Message);
                     continue;
                 }
 
@@ -220,11 +220,11 @@ namespace PinPurge
                 zdo.SetOwner(sessionID);
                 zdo.Set(ZDOVars.s_data, WriteBlob(blob));
                 totalRemoved += removed;
-                ZLog.Log($"[PinPurge] removed {removed} pin(s) from table at {zdo.GetPosition()}");
+                ZLog.Log($"[SharedMapEditor] removed {removed} pin(s) from table at {zdo.GetPosition()}");
             }
 
             Console.instance?.Print($"removed {totalRemoved} pin(s) for owner {ownerID}");
-            ZLog.Log($"[PinPurge] done, removed {totalRemoved} pin(s) total for owner {ownerID}");
+            ZLog.Log($"[SharedMapEditor] done, removed {totalRemoved} pin(s) total for owner {ownerID}");
         }
     }
 }
