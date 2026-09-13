@@ -27,7 +27,7 @@ namespace SharedMapEditor
                     DumpMapTables();
                     return true;
                 },
-                isCheat: false, isNetwork: false, onlyServer: true);
+                isCheat: false, isNetwork: false, onlyServer: true, remoteCommand: true);
 
             new Terminal.ConsoleCommand(
                 "purgemaptablepins",
@@ -42,7 +42,7 @@ namespace SharedMapEditor
                     PurgeOwnerPins(ownerID);
                     return true;
                 },
-                isCheat: false, isNetwork: false, onlyServer: true);
+                isCheat: false, isNetwork: false, onlyServer: true, remoteCommand: true);
         }
 
         private struct PinEntry

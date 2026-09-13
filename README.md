@@ -13,12 +13,15 @@ that stored blob directly and permanently.
 ## Requirements
 
 - [BepInEx](https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/)
-  installed on the **dedicated server**, not the clients.
+  installed on the **dedicated server**.
 
 ## Install
 
-Drop `SharedMapEditor.dll` into the server's `BepInEx/plugins/SharedMapEditor/`. No client
-install needed — this only touches world data, run from the server console.
+Drop `SharedMapEditor.dll` into the server's `BepInEx/plugins/SharedMapEditor/`.
+Only the server needs it — unless you want to run the commands from an
+admin's in-game console instead of the server's own terminal, in which case
+that admin's client needs it installed too (see below). Nobody else needs
+it either way.
 
 ## Use
 
@@ -36,7 +39,11 @@ install needed — this only touches world data, run from the server console.
 4. `purgemaptablepins <ownerID>` — removes every pin with that owner ID from
    every table's stored data. Prints how many were removed.
 
-Run both commands from the dedicated server's own console.
+Run both commands from the dedicated server's own console. They also work
+from an admin's in-game console (`F5` → `devcommands` first) if that admin's
+client also has `SharedMapEditor.dll` installed — the command gets relayed
+to the server automatically, same as `kick`/`ban`, but only if that player
+is in the server's `adminlist.txt`.
 
 ## Build from source
 
